@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
+            <state relative-caret-position="493">
               <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -86,6 +86,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="196">
               <caret line="920" column="8" selection-start-line="920" selection-start-column="8" selection-end-line="920" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activiti_api.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/conf/activiti_api.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -142,6 +151,7 @@
         <option value="$PROJECT_DIR$/www/templates/server.html" />
         <option value="$PROJECT_DIR$/www/sqlconfig.py" />
         <option value="$PROJECT_DIR$/www/app.py" />
+        <option value="$PROJECT_DIR$/conf/activiti_api.sql" />
       </list>
     </option>
   </component>
@@ -177,6 +187,11 @@
             <path>
               <item name="activiti_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="activiti_api" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="activiti_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="activiti_api" type="462c0819:PsiDirectoryNode" />
               <item name="mysql" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -206,13 +221,14 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\idea-workspace\activiti_api\www\templates" />
-      <recent name="D:\idea-workspace\activiti_api\mysql" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\idea-workspace\activiti_api\www" />
       <recent name="D:\idea-workspace\activiti_api" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea-workspace\activiti_api\conf" />
+      <recent name="D:\idea-workspace\activiti_api\www\templates" />
+      <recent name="D:\idea-workspace\activiti_api\mysql" />
       <recent name="D:\idea-workspace\activiti_api\www" />
       <recent name="D:\idea-workspace\activiti_api" />
     </key>
@@ -397,15 +413,16 @@
       <workItem from="1539163315793" duration="4533000" />
       <workItem from="1539220200862" duration="596000" />
       <workItem from="1539225991416" duration="27648000" />
-      <workItem from="1539330413171" duration="13134000" />
+      <workItem from="1539330413171" duration="13505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60226000" />
+    <option name="totallyTimeSpent" value="60597000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -413,9 +430,9 @@
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50053304" side_tool="true" weight="0.32897604" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49946696" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49946696" weight="0.32897604" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32897604" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32897604" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.2553305" />
       <window_info anchor="right" id="Database" order="2" />
@@ -501,16 +518,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysql/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -840,11 +847,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
+        <state relative-caret-position="493">
           <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/activiti_api.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
         </state>
       </provider>
     </entry>
