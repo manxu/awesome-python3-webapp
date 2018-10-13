@@ -1,0 +1,89 @@
+{% extends 'top.html' %}
+{% block content %}
+<script type="text/javascript">
+    function search(){
+        $("#searchForm").submit();
+    }
+    function reset1(){
+        $('#searchForm input[type=text]').val("");
+        $('#searchForm select>option:first').prop('selected', 'selected');
+    }
+    $(function () {
+        $("#type").val('{{ form.server_type }}'?'{{ form.server_type }}':1);
+    })
+</script>
+<div class="container">
+    <form action="/" method="post" id="searchForm">
+        <div class="row-fluid">
+            <label class="form_label">
+                IP：<input type="text" value="{{ form.ip }}" name="ip">
+            </label>
+            <label class="form_label">
+                端口：<input type="text" value="{{ form.port }}" name="port">
+            </label>
+            <label class="form_label">
+                类别：<select name="server_type" id="type" style="width: 60%;height: 24px;">
+                <option value="1">开发</option>
+                <option value="2">测试</option>
+                <option value="3">UAT</option>
+                <option value="4">PRO</option>
+            </select>
+            </label>
+            <label class="form_label">
+                服务地址：<input type="text" value="{{ form.server_addr }}" name="server_addr">
+            </label>
+            <label>
+                <input type="button" value="搜索" onclick="search()"/> &nbsp;&nbsp;
+                <input type="button" value="重置" onclick="reset1()"/>
+            </label>
+        </div>
+    </form>
+
+    <br/><br/>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>IP</th>
+            <th>端口号</th>
+            <th>服务地址</th>
+            <th>类别</th>
+            <th>描述</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>创建人</th>
+        </tr>
+        </thead>
+        {% for server in servers %}
+            <tr>
+                <td>{{ server.id }}</td>
+                <td>{{ server.ip }}</td>
+                <td>{{ server.port }}</td>
+                <td>{{ server.server_addr }}</td>
+                <td>
+                    {% if server.server_type==1 %}
+                        开发
+                    {% elif server.server_type==2 %}
+                        测试
+                    {% elif server.server_type==3 %}
+                        UAT
+                    {% else %}
+                        PRO
+                    {% endif %}
+                    </td>
+                <td>{{ server.server_remark }}</td>
+                <td>
+                    {% if server.server_status==1 %}
+                    <div style="width: 30px;height: 12px;background-color: green"></div>
+                    {% else %}
+                    <div style="width: 30px;height: 12px;background-color: red"></div>
+                    {% endif %}
+                </td>
+                <td>{{ server.create_time }}</td>
+                <td>{{ server.creator }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+</div>
+{% endblock content %}
