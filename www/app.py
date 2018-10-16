@@ -1,9 +1,13 @@
 import flask
 from flask import request
-from www.sqlconfig import Ip, app, AIServer,scheduler
+from www.sqlconfig import Ip, app, AIServer,scheduler,db
 from www.serverReq import gethttp
 import numpy as np
+import datetime
+from sshserver.config import paramikoclient
+from sshserver.test1 import transportclient
 
+client={}
 
 @app.route('/',methods = ['GET','POST'])
 def index():
@@ -22,6 +26,60 @@ def index():
     else:
         servers = AIServer.query.order_by("server_status").all()
     return flask.render_template('server.html',servers=servers,form = request.form)
+
+@app.route('/addServer',methods=['POST'])
+def addServer():
+    form = request.form
+    a = AIServer('1',form['ip'],form['port'],form['server_addr'],form['server_type'],form['server_remark'],0,datetime.datetime.now(),'sys')
+    db.session.add(a)
+    db.session.commit()
+    return 'dataFromAjax'
+
+
+# cmd
+@app.route('/cmd',methods=['GET'])
+def cmd():
+    arg = request.args['arg']
+    client_cmd = paramikoclient()
+    alt = client_cmd.run_ssh(arg)
+    client_cmd.close()
+    return  alt
+# 连接linux
+@app.route('/connect1',methods=['GET'])
+def connect1():
+    global client
+    shell = client.get('172.17.34.4')
+    if shell==None:
+        shell = transportclient('172.17.34.4',22, 'root', 'dev_201704')
+        client['172.17.34.4'] = shell
+    x,y = shell.connect()
+    if not x:
+        return '连接失败'
+    return y
+
+# 连接linux
+@app.route('/close',methods=['GET'])
+def close():
+    global client
+    shell = client.get('172.17.34.4')
+    shell.close()
+    return 'success'
+
+# shell
+@app.route('/shell',methods=['GET'])
+def shell():
+    arg = request.args['arg']
+    global client
+    shell = client.get('172.17.34.4')
+    if shell==None:
+        shell = transportclient('172.17.34.4',22, 'root', 'dev_201704')
+        if not shell.connect():
+            return '连接失败'
+        client['172.17.34.4'] = shell
+    alt = shell.send(arg)
+    # shell.close()
+    return  alt
+
 
 
 if __name__ == '__main__':

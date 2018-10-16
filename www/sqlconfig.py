@@ -40,14 +40,14 @@ class AIServer(db.Model):
     creator = db.Column(db.String(50))
 
     def __init__(self, ipId, ip, port, serverAddr, serverType, serverRemark, serverStatus, createTime, creator):
-        self.ipId = ipId
+        self.ip_id = ipId
         self.ip = ip
         self.port = port
-        self.serverAddr = serverAddr
+        self.server_addr = serverAddr
         self.server_type = serverType
-        self.serverRemark = serverRemark
-        self.serverStatus = serverStatus
-        self.createTime = createTime
+        self.server_remark = serverRemark
+        self.server_status = serverStatus
+        self.create_time = createTime
         self.creator = creator
 
 
