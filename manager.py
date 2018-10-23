@@ -1,6 +1,5 @@
 from views.app import app,scheduler
 from views.serverTask import gethttp
-from TencentSp.run import scr
 from views.server import admin
 from views.yellowPages import yellow
 
