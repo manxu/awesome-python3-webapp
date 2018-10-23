@@ -139,7 +139,7 @@
       <find>searchpath</find>
       <find>utf</find>
       <find>__init__</find>
-      <find />
+      <find>track_modifications = app.config.setdefault('SQLALCHEMY_TRACK_MODIFICATIONS</find>
       <find>track_modifications</find>
       <find>SQLALCHEMY_COMMIT_ON_TEARDOWN</find>
       <find>SQLALCHEMY_TRACK_MODIFICATIONS</find>
@@ -236,7 +236,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -253,17 +253,6 @@
             <path>
               <item name="activiti_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="activiti_api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti_api" type="462c0819:PsiDirectoryNode" />
-              <item name="TencentSp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti_api" type="462c0819:PsiDirectoryNode" />
-              <item name="TencentSp" type="462c0819:PsiDirectoryNode" />
-              <item name="TencentSp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -485,12 +474,12 @@
       <workItem from="1539848908255" duration="5712000" />
       <workItem from="1539914571951" duration="6944000" />
       <workItem from="1540172956651" duration="11991000" />
-      <workItem from="1540257005789" duration="13589000" />
+      <workItem from="1540257005789" duration="13884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143476000" />
+    <option name="totallyTimeSpent" value="143771000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,7 +492,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32897604" />
