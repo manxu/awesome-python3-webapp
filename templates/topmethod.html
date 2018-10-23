@@ -1,0 +1,46 @@
+{% extends 'top.html' %}
+{% block content %}
+<!-- top方法用时统计 -->
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+    function search(){
+        $("#searchForm").submit();
+    }
+</script>
+<div class="container">
+    <form action="/topMethod" method="post" id="searchForm">
+        <div class="row-fluid">
+            <label class="form_label">
+                方法：<input type="text" value="{{ form.method }}" name="method">
+            </label>
+            <label>
+                <button class="btn btn-sm" data-toggle="modal"  onclick="search()">搜索</button> &nbsp;&nbsp;
+                <button class="btn btn-sm" data-toggle="modal"  onclick="reset1()">重置</button>
+            </label>
+        </div>
+    </form>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>方法</th>
+            <th>执行次数</th>
+            <th>平均时间</th>
+            <th>全部时间</th>
+        </tr>
+        </thead>
+        <!--{{ topMethods|length }}                           神奇-->
+        {% for m in topMethods %}
+            <tr>
+                <td>{{ m.method }}</td>
+                <td>{{ m.num }}</td>
+                <td>{{ m.preTime }}</td>
+                <td>{{ m.time }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+</div>
+{% endblock content %}
